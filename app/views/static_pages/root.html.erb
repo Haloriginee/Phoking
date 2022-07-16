@@ -1,10 +1,20 @@
 <% if logged_in? %>
     <script type="text/javascript">
 
-        window.currentUser = <%= render(
-            "api/users/user.json.jbuilder",
-            user: current_user
-        ).html_safe %>
+        window.currentUser = json.id user.id
+json.email user.email
+json.profiles do
+    user.profiles.each do |profile|
+        json.set! profile.id do
+            json.id profile.id
+            json.name profile.name
+            json.user_id profile.user_id
+            json.list_id profile.list.id
+
+        end
+    end
+end
+
 
     </script>
 <% end %>
