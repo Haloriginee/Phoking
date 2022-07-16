@@ -8,13 +8,11 @@
 #
 
 class Profile < ApplicationRecord
-
   belongs_to :user,
-      foreign_key: :user_id,
-      class_name: :User
+             foreign_key: :user_id,
+             class_name: :User
 
   has_one :list, dependent: :destroy,
-      foreign_key: :profile_id,
-      class_name: :List
-
+                 foreign_key: :profile_id,
+                 class_name: :List
 end

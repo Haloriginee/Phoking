@@ -34,7 +34,8 @@ module.exports = {
             store: path.resolve(__dirname, "frontend/redux/store"),
             util: path.resolve(__dirname, "frontend/redux/util"),
             reducers: path.resolve(__dirname, "frontend/redux/reducers"),
-            actions: path.resolve(__dirname, "frontend/redux/actions")
+            actions: path.resolve(__dirname, "frontend/redux/actions"),
         }
-    }
+    },
+    mode:'development',
 };

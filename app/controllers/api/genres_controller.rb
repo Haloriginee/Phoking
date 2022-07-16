@@ -1,18 +1,16 @@
 class Api::GenresController < ApplicationController
-
   def index
-      @genres = Genre.all
+    @genres = Genre.all
 
-      render :index
+    render :index
   end
 
   def show
-
   end
 
   private
-  def genre_params
-      params.require(:genre).permit(:name)
-  end
 
+  def genre_params
+    params.require(:genre).permit(:name)
+  end
 end

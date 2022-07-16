@@ -32,7 +32,7 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node": "12.5.0",
+    "node": "16.13.1",
     "npm": "6.9.0"
   },
   "keywords": [],
