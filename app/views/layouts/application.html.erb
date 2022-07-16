@@ -17,11 +17,11 @@
       gtag('config', 'UA-162633773-2');
     </script>
 
-    <link rel="icon" href="<%= image_url('spaceflix-favicon.png') %>">
+    <link rel="icon" href="<%#= image_url('spaceflix-favicon.png') %>">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
     <script type="text/javascript">
-        window.backupTrailerURL = "<%= image_url('backup_trailer.mp4') %>"
+        window.backupTrailerURL = "<%#= image_url('backup_trailer.mp4') %>"
     </script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
