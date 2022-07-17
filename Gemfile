@@ -38,7 +38,6 @@ gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 gem 'aws-sdk-s3'
 
-gem 'jquery-rails'
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -90,5 +89,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
