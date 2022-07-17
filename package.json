@@ -31,7 +31,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack",
-    "webpack": "webpack --mode=development --watch"
+    "webpack": "webpack --mode=development --watch",
+    "build": "webpack--config webpack.dev.js",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+
   },
   "repository": {
     "type": "git"
@@ -41,4 +44,5 @@
   "license": "ISC",
   "bugs": {
   }
+
 }
