@@ -79,8 +79,7 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  gem "spring"
-  gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 
 group :test do
