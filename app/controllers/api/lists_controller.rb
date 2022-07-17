@@ -1,23 +1,22 @@
 class Api::ListsController < ApplicationController
   def create
-    @list = List.new(list_params)
+    listing = List.new(user_id: current_user.id, video_id: params[:video][:id])
 
-    if @list && @list.save!
-      prof = Profile.find(params[:list][:profile_id])
+    if listing.save
 
-      @user = prof.user
-      render '/api/users/show'
+      @mylist = listing
+      render '/api/lists/index'
+    else
+      render json: ['Video does not exist :('], status: 404
     end
   end
 
-  def show
-    @list = List.find(params[:id])
-    render '/api/lists/show'
+  def index
+    @mylist = current_user.mylist
   end
 
-  private
-
-  def list_params
-    params.require(:list).permit(:profile_id)
+  def destroy
+    @mylist = List.find_by(user_id: current_user.id, video_id: params[:video_id])
+    @mylist.destroy
   end
 end

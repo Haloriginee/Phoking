@@ -1,0 +1,36 @@
+.fullscreen-container {
+
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.fullscreen-container video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.back-btn {
+  position: relative;
+  top: 15px;
+  left: 15px;
+  background-color: transparent;
+  border: none;
+  /* z-index: 3; */
+  color: white;
+  font-size: 72px;
+  outline: none;
+}
+
+.hidden-back-btn {
+  display: none;
+  outline: none;
+}
+
+.hidden-list-btn {
+  display: none;
+  outline: none;
+
+}

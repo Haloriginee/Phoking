@@ -1,16 +1,16 @@
-import { combineReducers } from "redux";
-import usersReducer from "./users_reducer";
-import genresReducer from "./genres_reducer";
-import profilesReducer from "./profiles_reducer";
-import activeProfileReducer from "./active_profile_reducer";
-import listsReducer from "./lists_reducer";
+import usersReducer from './users_reducer';
+import { combineReducers } from 'redux';
+import videosReducer from './videos_reducer'
+import genresReducer from './genres_reducer';
+import listsReducer from './list_reducer';
+import searchReducer from './search_reducer';
 
 const entitiesReducer = combineReducers({
     users: usersReducer,
+    videos: videosReducer,
     genres: genresReducer,
-    profiles: profilesReducer,
-    activeProfile: activeProfileReducer,
-    list: listsReducer
+    list: listsReducer,
+    search: searchReducer
 });
 
 export default entitiesReducer;

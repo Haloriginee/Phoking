@@ -2,11 +2,18 @@
 #
 # Table name: genres
 #
-#  id   :bigint           not null, primary key
-#  name :string           not null
+#  id         :bigint           not null, primary key
+#  genre      :string           not null
+#  video_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 class Genre < ApplicationRecord
-  has_many :movies,
-           foreign_key: :genre_id,
-           class_name: :Movie
+  validates :genre, presence: true
+
+  belongs_to :video,
+             class_name: :Video,
+             foreign_key: :video_id
+
+  attr_reader :genre_videos
 end

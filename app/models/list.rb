@@ -3,18 +3,17 @@
 # Table name: lists
 #
 #  id         :bigint           not null, primary key
-#  profile_id :integer          not null
+#  user_id    :integer          not null
+#  video_id   :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 class List < ApplicationRecord
-  belongs_to :profile,
-             foreign_key: :profile_id,
-             class_name: :Profile
+  belongs_to :user,
+             class_name: :User,
+             foreign_key: :user_id
 
-  has_many :movie_associations,
-           foreign_key: :list_id,
-           class_name: :ListMovie
-
-  has_many :movies,
-           through: :movie_associations,
-           source: :movie
+  belongs_to :video,
+             class_name: :Video,
+             foreign_key: :video_id
 end

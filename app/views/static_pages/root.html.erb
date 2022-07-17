@@ -1,23 +1,38 @@
 <% if logged_in? %>
-    <script type="text/javascript">
-
-        window.currentUser = json.id user.id
-json.email user.email
-json.profiles do
-    user.profiles.each do |profile|
-        json.set! profile.id do
-            json.id profile.id
-            json.name profile.name
-            json.user_id profile.user_id
-            json.list_id profile.list.id
-
-        end
-    end
-end
-
-
-    </script>
+  <script id="bootstrap-current-user" type="text/javascript">
+  	window.currentUser = (json.extract! user, :id, :username, :password, :email
+json.myListVideoIds user.videos_on_list.pluck(:id)
+json.previousViewIds user.previously_viewed_videos.pluck(:id),
+  		user: current_user).html_safe
+  </script>
 <% end %>
-<div id="root">
-    React is not working.
-</div>
+
+
+<script type="text/javascript">
+  window.tvURL = "<%= image_url('tv.png') %>";
+</script>
+
+<script type="text/javascript">
+  window.linkURL = "<%= image_url('download-1.png') %>";
+</script>
+
+
+<script type="text/javascript">
+  window.gitURL = "<%= image_url('download-2.png') %>";
+</script>
+
+<script type="text/javascript">
+  window.netflixSmileyURL = "<%= image_url('netflix-smiley.jpg') %>";
+</script>
+
+
+<script type="text/javascript">
+  window.mobileURL = "<%= image_url('mobile-0819.jpg') %>";
+</script>
+
+<script type="text/javascript">
+  window.deviceURL = "<%= image_url('device.png') %>";
+  window.bplogo = "<%= image_url('bplogo.jpg')%>"
+</script>
+
+<main id="root">Hello</main>

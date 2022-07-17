@@ -23,7 +23,7 @@ user1 = User.create!({email: "user1@gmail.com", password: "password123"})
 user2 = User.create!({email: "user2@gmail.com", password: "password123"})
 user3 = User.create!({email: "user3@gmail.com", password: "password123"})
 
-#GENRES
+# GENRES
 
 adventure = Genre.create!({name: "Adventure"})
 reallife = Genre.create!({name: "Based on Real Life"})
